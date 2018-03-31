@@ -29,21 +29,24 @@
 - Multi-threaded
 - No client dependencies (pure python)
 - Persistent
-- Simple extendable [module](https://github.com/Marten4n6/EvilOSX/blob/master/modules/template.py) system
+- Simple extendable [module](https://github.com/Marten4n6/EvilOSX/blob/master/modules) system
 - Retrieve Chrome passwords
 - Retrieve iCloud tokens and contacts
-- [Phish](https://en.wikipedia.org/wiki/Phishing) for iCloud passwords via iTunes
+- [Phish](https://i.imgur.com/x3ilHQi.png) for iCloud passwords via iTunes
 - Download and upload files
 - Take a picture using the webcam
 - iTunes iOS backup enumeration
+- Retrieve or monitor the clipboard
 - Retrieve browser history (Chrome and Safari)
 - Attempt to get root via local privilege escalation
 - Auto installer, simply run EvilOSX on your target and the rest is handled automatically
 
 ## How To Use
+The server side requires [python3](https://www.python.org/downloads) to run (probably already installed on your system).
+
 ```bash
 # Install urwid (required for the server GUI)
-$ sudo pip install urwid
+$ sudo pip3 install urwid
 
 # Clone or download this repository
 $ git clone https://github.com/Marten4n6/EvilOSX
@@ -51,15 +54,19 @@ $ git clone https://github.com/Marten4n6/EvilOSX
 # Go into the repository
 $ cd EvilOSX
 
-# Build EvilOSX which runs on your target
+# Build a launcher to infect your target
 $ python builder.py
 
 # Start listening for connections
-$ python server/server.py
+$ python start.py
 
-# Lastly, run the built EvilOSX on your target.
+# Lastly, run the built launcher on your target
 ```
-![](https://i.imgur.com/u2FYrUu.png)
+**Because payloads are created unique to the target system (automatically by the server), the server must be running when any client connects for the first time.**
+
+# Screenshots
+![](https://i.imgur.com/eHHcowd.png)
+![](https://i.imgur.com/lC8XtlJ.png)
 
 ## Motivation
 
@@ -109,6 +116,7 @@ Feel free to submit any issues or feature requests.
 ## Credits
 
 - The awesome [Empire](https://github.com/EmpireProject) project
+- Shoutout to [Patrick Wardle](https://twitter.com/patrickwardle) for his awesome talks, check out [Objective-See](https://objective-see.com/)
 - [manwhoami](https://github.com/manwhoami) for his projects: [OSXChromeDecrypt](https://github.com/manwhoami/OSXChromeDecrypt), [MMeTokenDecrypt](https://github.com/manwhoami/MMeTokenDecrypt), [iCloudContacts](https://github.com/manwhoami/iCloudContacts)
 - The slowloris module is pretty much copied from [PySlowLoris](https://github.com/ProjectMayhem/PySlowLoris)
 - [urwid](http://urwid.org/) and [this code](https://github.com/izderadicka/xmpp-tester/blob/master/commander.py) which saved me a lot of time with the GUI
