@@ -35,6 +35,7 @@
 - [Phish](https://i.imgur.com/x3ilHQi.png) for iCloud passwords via iTunes
 - Download and upload files
 - Take a picture using the webcam
+- Record microphone input
 - iTunes iOS backup enumeration
 - Retrieve or monitor the clipboard
 - Retrieve browser history (Chrome and Safari)
@@ -45,11 +46,11 @@
 The server side requires [python3](https://www.python.org/downloads) to run (probably already installed on your system).
 
 ```bash
-# Install urwid (required for the server GUI)
-$ sudo pip3 install urwid
-
 # Clone or download this repository
 $ git clone https://github.com/Marten4n6/EvilOSX
+
+# Install dependencies required by the server
+$ sudo pip3 install -r requirements.txt
 
 # Go into the repository
 $ cd EvilOSX
