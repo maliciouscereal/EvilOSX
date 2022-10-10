@@ -28,6 +28,10 @@
 
 ---
 
+[Marco Generator](https://github.com/cedowens/EvilOSX_MacroGenerator) by Cedric Owens
+
+### This project is no longer active
+
 ## Features
 - Emulate a terminal instance
 - Simple extendable [module](https://github.com/Marten4n6/EvilOSX/blob/master/CONTRIBUTING.md) system
